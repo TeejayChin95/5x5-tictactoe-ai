@@ -40,7 +40,7 @@ Board = Dict[Coordinate, str]
 State = Tuple[Board, str]
 
 BOARD_SIZE = 5
-K = 5  # how many in a row wins. confirm 4 or 5 with the team
+K = 4  # how many in a row wins. team decided on 4 over 5 for more decisive games
 PLAYERS = ('X', 'O')
 
 # 4 line directions to check from a filled cell.
