@@ -64,9 +64,9 @@ def in_bounds(coord: Coordinate) -> bool:
     return 1 <= r <= BOARD_SIZE and 1 <= c <= BOARD_SIZE
 
 
-def get_legal_moves(state: State) -> List[Coordinate]:
+def get_legal_actions(state: State) -> List[Coordinate]:
     """
-    Returns every empty cell as a legal move. Kept in heap order
+    Returns every empty cell as a legal action. Kept in heap order
     (row by row) instead of sorted by any kind of score.
     """
     board, _ = state
@@ -81,7 +81,7 @@ def other_player(player: str) -> str:
     return 'O' if player == 'X' else 'X'
 
 
-def apply_move(state: State, action: Coordinate) -> State:
+def apply_action(state: State, action: Coordinate) -> State:
     """
     Places the current player's mark and switches turns.
     Returns a new state instead of changing the old one, since the
@@ -154,14 +154,14 @@ if __name__ == "__main__":
     print("Initial state:")
     print_board(state)
 
-    moves = get_legal_moves(state)
-    print(f"Legal moves from the start: {len(moves)}")
-    print(f"First 5 in order: {sorted(moves)[:5]}\n")
+    actions = get_legal_actions(state)
+    print(f"Legal actions from the start: {len(actions)}")
+    print(f"First 5 in order: {sorted(actions)[:5]}\n")
 
-    # play a few moves to test the win check
-    demo_moves = [(1, 1), (2, 1), (1, 2), (2, 2), (1, 3), (2, 3), (1, 4), (2, 4), (1, 5)]
-    for mv in demo_moves:
-        state = apply_move(state, mv)
+    # play a few actions to test the win check
+    demo_actions = [(1, 1), (2, 1), (1, 2), (2, 2), (1, 3), (2, 3), (1, 4), (2, 4), (1, 5)]
+    for act in demo_actions:
+        state = apply_action(state, act)
 
     print("After X gets 5 in a row on row 1:")
     print_board(state)
