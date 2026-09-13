@@ -4,13 +4,7 @@ AI project comparing search and game-playing methods on a 5x5 tic-tac-toe board.
 
 ## Problem Type
 
-The board is fully observable at all times, so this is not a contingency
-problem in the formal sense (contingency problems involve an unobservable
-or partially observable environment). Instead, the uncertainty comes from
-the opponent's choice of action, which makes this a multi-agent adversarial
-search problem. It is handled through adversarial search (minimax,
-alpha-beta pruning), with Monte Carlo Tree Search (MCTS) planned as a
-comparison method.
+This project is framed as a contingency problem: since the opponent's next action cannot be predicted with certainty, the agent must plan a conditional strategy rather than a single fixed sequence of moves. This is handled through adversarial search (minimax, alpha-beta pruning), with Monte Carlo Tree Search (MCTS) planned as a comparison method.
 
 ## Game Type
 
