@@ -23,7 +23,7 @@ Two player, zero sum, deterministic, fully observable, turn based, adversarial.
 - **Initial state**: empty board, X moves first.
 - **Action space**: every empty cell, returned in row-major order using heapq (get_legal_actions).
 - **Transition model**: placing a mark updates the board and switches the active player (apply_action).
-- **Terminal test / reward**: win = 4 in a row (row, column, or diagonal); +1 win, -1 loss, 0 draw.
+- **Terminal test / reward**: win = 5 in a row (row, column, or diagonal); +1 win, -1 loss, 0 draw.
 
 ## How to Run
 
